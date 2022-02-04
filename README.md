@@ -4,11 +4,16 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+## How this project was generated
+
+1. `sdk install quarkus`
+2. `quarkus create app --maven example.com:quarkus-sample`
+
 ## Running the application in dev mode
 
 You can run your application in dev mode that enables live coding using:
 ```shell script
-./mvnw compile quarkus:dev
+quarkus dev
 ```
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
@@ -54,3 +59,4 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+

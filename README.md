@@ -4,6 +4,12 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
+For the best development environment. 
+
+Make sure you have docker installed on your host and open this in the devcontainer provided in vscode. 
+
+The devcontainer will utilise docker-from-docker for building native image
+
 ## How this project was generated
 
 1. `sdk install quarkus`
@@ -40,15 +46,15 @@ The application, packaged as an _über-jar_, is now runnable using `java -jar ta
 
 You can create a native executable using: 
 ```shell script
-./mvnw package -Pnative
-```
-
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using: 
-```shell script
-./mvnw package -Pnative -Dquarkus.native.container-build=true
+quarkus build --native
 ```
 
 You can then execute your native executable with: `./target/quarkus-sample-1.0.0-SNAPSHOT-runner`
+
+Example:
+```shell script
+./target/quarkus-sample-1.0.0-SNAPSHOT-runner -Dquarkus.http.port=8081 -Dquarkus.http.ssl-port=8444 -Dtest.url=http://localhost:8081 -Dquarkus.log.file.path=/workspaces/quarkus-sample/target/quarkus.log -Dquarkus.log.file.enable=true
+```
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
@@ -59,4 +65,3 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
-
